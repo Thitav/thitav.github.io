@@ -12,7 +12,7 @@ a {
 
 @font-face {
   font-family: "unifont";
-  src: url("/fonts/unifont.woff") format("woff");
+  src: url("../fonts/unifont.woff") format("woff");
 }
 
 pre {
