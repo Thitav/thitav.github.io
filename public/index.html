@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Thitav's Blog</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  </head>
+  <body>
+      <pre id="terminal"></pre>
+      <script lang="js" type="module">
+        import { getTerminal } from './scripts/terminal.js';
+        const terminal = getTerminal();
+
+        await terminal.printBoot();
+        terminal.print("TavOS 1.0.0 Thitav-PC tty1");
+        terminal.print("");
+        await terminal.input("Thitav-PC login: ", "root\n");
+        await terminal.input("Password: ", "********\n");
+        terminal.print("Last login: Sun Jan  3 20:00:00 on tty1");
+        terminal.print("");
+        await terminal.type("~# ", "./supersecret\n");
+        await terminal.wait(500);
+        window.location.href = "/home.html";
+      </script>
+  </body>
+</html>
