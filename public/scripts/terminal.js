@@ -90,7 +90,6 @@ Client task not privileged to open IOHIDSystem for mapping memory (e00002c1)
  
 Boot Complete
 `;
-const DEFAULT_DELAY = 100;
 
 class Terminal {
   #terminal;
@@ -104,17 +103,17 @@ class Terminal {
   }
 
   print(text) {
-    this.#terminal.innerHTML += text + "\n";
+    this.#terminal.append(text);
     window.scrollTo(0, document.body.scrollHeight);
   }
 
-  async printBoot(delay = DEFAULT_DELAY) {
-    const lines = BOOT_TEXT.split("\n");
-    for (const line of lines) {
-      await this.wait(Math.random() * delay);
-      this.print(line);
-      window.scrollTo(0, document.body.scrollHeight);
-    }
+  println(text) {
+    this.print(text + "\n");
+  }
+
+  async printBoot() {
+    const lines = BOOT_TEXT.split("\n").map((line) => line + "\n");
+    await this.type(lines);
     await this.wait(500);
     this.clear();
   }
@@ -123,9 +122,30 @@ class Terminal {
     this.#terminal.innerHTML = "";
   }
 
-  async input(prompt, text) {
-    this.#terminal.innerHTML += prompt;
+  async ls(files) {
+    this.print("~# ")
+    await this.type("ls\n");
 
+    for (const file of files) {
+      const text = document.createElement("a");
+      text.textContent = file.name;
+      text.href = "#";
+      text.addEventListener("click", async (e) => {
+        e.preventDefault();
+        if (file.type == "dir") {
+          await this.type(`cd ${file.name.replace(" ", "\\ ")}/\n`);
+        } else {
+          await this.type(`cat ${file.name.replace(" ", "\\ ")}\n`);
+        }
+        window.location.href = file.link;
+      });
+      this.#terminal.appendChild(text);
+      this.print("\n");
+    }
+    this.print("~# ");  
+  }
+
+  async input(text) {
     text = text.split("");
     await new Promise(resolve => {
       const handler = () => {
@@ -133,17 +153,15 @@ class Terminal {
           document.removeEventListener("keydown", handler);
           return resolve();
         }
-        this.#terminal.innerHTML += text.shift();
+        this.print(text.shift());
       }
       document.addEventListener("keydown", handler);
     });
   }
 
-  async type(prompt, text, delay = DEFAULT_DELAY) {
-    this.#terminal.innerHTML += prompt;
-
-    for (const char of text) {
-      this.#terminal.innerHTML += char;
+  async type(text, delay = 100) {
+    for (const part of text) {
+      this.print(part);
       await this.wait(Math.random() * delay);
     }
   }
