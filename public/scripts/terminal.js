@@ -142,7 +142,7 @@ class Terminal {
       this.#terminal.appendChild(text);
       this.print("\n");
     }
-    this.print("~# ");  
+    this.print("~# ");
   }
 
   async input(text) {
