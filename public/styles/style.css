@@ -1,10 +1,61 @@
+@font-face {
+  font-family: "unifont";
+  src: url("../fonts/unifont.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   color: #fefefe;
   background-color: #0a0b11;
-  margin: 0 auto;
-  padding: 1em 0 1em 0;
   display: flex;
-  flex-direction: row;
+  min-height: 100vh;
+  font-family: "unifont", "Lucida Console", monospace, Monaco;
+}
+
+.sidebar {
+  width: 25%;
+  flex-shrink: 0;
+}
+
+.sidebar.left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: left;
+}
+
+.sidebar.right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+.content {
+  margin: 0 25% 0 25%;
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.ascii-art {
+  line-height: 1;
 }
 
 a {
@@ -12,24 +63,11 @@ a {
   text-decoration: none;
 }
 
-@font-face {
-  font-family: "unifont";
-  src: url("../fonts/unifont.woff") format("woff");
-}
-
-pre {
+code.hljs {
   display: block;
-  text-align: left;
-  font-family: "unifont", "Lucida Console", monospace, Monaco;
-  font-size: 16px;
-  line-height: 1;
-  padding-left: 20px;
-}
-
-.pillar {
-  flex: 1;
-}
-
-.center {
-  flex: 3;
+  overflow-x: auto;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  font-family: inherit;
 }

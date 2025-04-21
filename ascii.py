@@ -1,12 +1,8 @@
-with open("ascii.txt", "rb") as f:
-    ascii = f.read()
-    f.close()
+f = open("ascii.txt", "r")
+text = f.readlines()
+f.close()
 
-ascii = ascii.replace(b"\xe2\x96\x88", b" ")
-ascii = ascii.replace(b"\xe2\x96\x91", b" ")
-ascii = ascii.replace(b"\xe2\x96\x92", b"\xe2\x96\x88")
-# ascii = ascii.replace(b"\xe2\x96\x93", b"\xe2\x96\x92")
-
-with open("newascii.txt", "wb") as f:
-    f.write(ascii)
-    f.close()
+rtext = [i[::-1] for i in text]
+f = open("ascii_reversed.txt", "w")
+f.writelines(rtext)
+f.close()
