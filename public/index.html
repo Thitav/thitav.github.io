@@ -1,28 +1,34 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Thitav's Blog</title>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-  </head>
-  <body>
-    <pre id="terminal"></pre>
-    <script lang="js" type="module">
-      import { getTerminal } from './scripts/terminal.js';
-      const terminal = getTerminal();
 
-      await terminal.printBoot();
-      terminal.println("TavOS 1.0.0 Thitav-PC tty1");
-      terminal.println("");
-      terminal.print("Thitav-PC login: ");
-      await terminal.type("root\n");
-      terminal.print("Password: ");
-      await terminal.type("********\n");
-      terminal.println("Last login: Sun Jan  3 20:00:00 on tty1");
-      terminal.println("");
-      terminal.print("~# ");
-      await terminal.type("./supersecret\n");
-      await terminal.wait(500);
-      window.location.href = "/home.html";
-    </script>
-  </body>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Thitav</title>
+</head>
+
+<body>
+    <div>
+        <h1>Hey!</h1>
+
+        <h1>Who I am</h1>
+        <ul>
+            <li>My name is Thiago</li>
+            <li>Brazillian</li>
+            <li>I love cybersecurity and software development</li>
+            <li>I enjoy drawing, flight simulators, fashion and much more</li>
+        </ul>
+
+        <h1>What Im doing</h1>
+        <ul>
+            <li>Security auditing/research @ <a href="https://osec.io/">OtterSec</a></li>
+            <li>BS Data Sciense @ <a href="https://www5.usp.br/#english">USP</a></li>
+            <li>CTFs and more with <a href="https://ganesh.icmc.usp.br/en">Ganesh</a></li>
+        </ul>
+
+        <h1>Contact me</h1>
+        <a href="https://www.linkedin.com/in/thiago-pasquotto-tavares-85296b257/">Linkedin</a>
+        <a href="mailto:thiptav@gmail.com">Email</a>
+    </div>
+</body>
+
 </html>
